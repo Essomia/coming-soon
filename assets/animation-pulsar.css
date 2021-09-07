@@ -1,0 +1,49 @@
+/* VARIABLES */
+
+:root {
+  --animation-pulsar-space: 0.5em;
+  --animation-pulsar-color: 0, 247, 255;
+  --animation-pulsar-inner-size: 4em;
+  --animation-pulsar-shade-width: 2em;
+}
+
+@keyframes animation-pulsar {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(var(--animation-pulsar-color), 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 var(--animation-pulsar-shade-width)
+      rgba(var(--animation-pulsar-color), 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(var(--animation-pulsar-color), 0);
+  }
+}
+
+/* ANIMATION */
+
+.animation-pulsar {
+  display: flex;
+  align-items: center; /* horizontal */
+  justify-content: center; /* vertical */
+  flex-flow: column;
+  gap: var(--animation-pulsar-space);
+}
+
+.animation-pulsar::before {
+  content: "";
+  width: var(--animation-pulsar-inner-size);
+  height: var(--animation-pulsar-inner-size);
+  background: rgba(var(--animation-pulsar-color), 1);
+  border-radius: 100%;
+
+  /* Shorthand: name, duration, function, delay, iteration */
+  animation: animation-pulsar 2s linear 0s infinite;
+  /* Shorthand: property, delay, duration, function */
+  transition: transform 1s 0s ease-in-out;
+}
