@@ -1,0 +1,13 @@
+{
+  "name": "essomia/coming-soon",
+  "version": "1.0.0",
+  "description": "A minimalist and responsive coming soon page.",
+  "keywords": ["coming-soon-page", "html-template"],
+  "main": "index.html",
+  "scripts": {
+    "test": "#"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "resolutions": {}
+}
